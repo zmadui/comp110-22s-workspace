@@ -1,4 +1,4 @@
-"""EX01 - Chardle - A cute step toward Wordle"""
+"""EX01 - Chardle - A cute step toward Wordle!"""
 
 __author__ = "730329470"
 
@@ -12,7 +12,7 @@ if len(word) != 5:
 single: str = input("Enter a single character: ")
 
 if len(single) != 1:
-    print( "Error: Character must be a single character.")
+    print("Error: Character must be a single character.")
     exit()
 
 match: int = 0
@@ -34,7 +34,7 @@ if single == word[2]:
 
 if single == word[3]:
     print(single + " found at index 3")
-    match = match+ 1
+    match = match + 1
 
 if single == word[4]:
     print(single + " found at index 4")
@@ -56,4 +56,4 @@ else:
                     print(" 4 instances of " + single + " found in " + word)
                 else:
                     if match == 5:
-                        print( "5 instances of " + single + " found in " + word)
+                        print(" 5 instances of " + single + " found in " + word)
