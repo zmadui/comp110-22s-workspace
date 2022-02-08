@@ -1,8 +1,6 @@
-"""Ex03 - 6 Tries Wordle. """
+"""Ex03 - 6 Tries Wordle."""
 
-__author__ =730329470
-
-from platform import python_branch
+__author__ = "730329470"
 
 
 WHITE_BOX: str = "\U00002B1C"
@@ -16,14 +14,16 @@ def contains_char(word: str, main_char: str) -> bool:
     i: int = 0
     while i < len(word):
         if main_char != word[i]:
-            i +=1
+            i += 1
         else:
             return True
     return False
 
+
 def emojified(guess: str, secret: str) -> str:
     """Insert an emoji based on if the character in the guess matches with a charcter in the secret."""
     assert len(guess) == len(secret)
+
     i: int = 0
     emoji: str = ""
     while i < len(secret):
@@ -37,12 +37,14 @@ def emojified(guess: str, secret: str) -> str:
         i += 1
     return emoji
 
+
 def input_guess(expected: int) -> str:
     """Determine if the guess is the correct length."""
-    guess: str = input(f"Enter a {expected} character word: " )
+    guess: str = input(f"Enter a {expected} character word: ")
     while len(guess) != expected:
         guess = input(f"That was not {expected} letters! Try again: ")
     return guess
+
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
@@ -50,9 +52,8 @@ def main() -> None:
     n: int = 0
     word_entered: str = ""
     won: bool = False
-    while n < len(secret) and won != True:
+    while n < len(secret) + 1 and won == False:
         print(f"=== Turn {n+1}/6 ===")
-
         word_entered = input_guess(len(secret))
         print(emojified(word_entered, secret))
         n += 1 
@@ -61,9 +62,9 @@ def main() -> None:
     if won == True:
         print(f"You won in {n}/6 turns!")
     else:
-        print("X/6 - Sorry, try again tomorrow!")
+        if won == False:
+            print("X/6 - Sorry, try again tomorrow!")
 
-    
 
 if __name__ == "__main__":
     main()
