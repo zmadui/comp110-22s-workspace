@@ -3,10 +3,11 @@
 __author__ = "730329470"
 
 from turtle import Turtle, colormode, done
+colormode(255)
 
 
 def main() -> None:
-    """This is where my scene commences"""
+    """This is where my scene commences."""
     steven: Turtle = Turtle()
     base(steven, 200, 90, 170)
     window(steven, 65, 100)
@@ -18,19 +19,19 @@ def main() -> None:
     done()
 
 
-def base(steven: Turtle, x: float, y: float, z: float) -> None: #am I allowed to add z?
-    "Drawing the base of the house"
+def base(steven: Turtle, x: float, y: float, z: float) -> None: 
+    """Drawing the base of the house."""
     i: int = 0 
     while (i < 2):
         steven.forward(x)
         steven.left(y)
         steven.forward(z)
         steven.left(y)
-        i+=1
+        i += 1
       
     
 def roof(steven: Turtle, x: float, y: float, z: float) -> None:
-    "Drawing the roof of the house"
+    """Drawing the roof of the house."""
     i: int = 0
     steven.penup()
     steven.goto(0, 170)
@@ -45,21 +46,18 @@ def roof(steven: Turtle, x: float, y: float, z: float) -> None:
         steven.left(y)
         steven.end_fill()
         i += 1
-    #steven.goto(170,170)
+
         
-
-    #fill the roof a color
-
 def window(steven: Turtle, x: float, y: float) -> None:
-    "Drawing windows for the house"
+    """Drawing windows for the house."""
     i: int = 0
     steven.penup()
-    steven.goto(x,y)
+    steven.goto(x, y)
     steven.pendown()
-    steven.pencolor("blue")
+    steven.pencolor(99, 204, 250)
     steven.begin_fill()
-    steven.fillcolor("blue")
-    while ( i < 2 ):
+    steven.fillcolor(99, 204, 250)
+    while (i < 2):
         steven.left(90)
         steven.forward(60)
         steven.left(90)
@@ -69,15 +67,15 @@ def window(steven: Turtle, x: float, y: float) -> None:
     
 
 def chimney(steven: Turtle, x: float, y: float) -> None:
-    "Drawing a chimney on the house"
+    """Drawing a chimney on the house."""
     i: int = 0
     steven.penup()
     steven.pencolor("grey")
     steven.goto(180, 230)
-    steven.goto(x,y)
+    steven.goto(x, y)
     steven.pendown()
     steven.begin_fill()
-    while ( i < 2 ):
+    while (i < 2):
         steven.fillcolor("grey")
         steven.forward(30)
         steven.left(90)
@@ -86,8 +84,9 @@ def chimney(steven: Turtle, x: float, y: float) -> None:
         i += 1
     steven.end_fill()
 
+
 def door(steven: Turtle, x: float, y: float) -> None:
-    "Drawing a circular door"
+    """Drawing a circular door."""
     steven.penup()
     steven.pencolor("pink")
     steven.goto(x, y)
@@ -97,8 +96,9 @@ def door(steven: Turtle, x: float, y: float) -> None:
     steven.circle(30)
     steven.end_fill()
 
+
 def doorhandle(steven: Turtle, x: float, y: float) -> None:
-    """Drawing the handle of the door"""
+    """Drawing the handle of the door."""
     steven.penup()
     steven.pencolor("purple")
     steven.goto(x, y)
@@ -107,6 +107,7 @@ def doorhandle(steven: Turtle, x: float, y: float) -> None:
     steven.fillcolor("purple")
     steven.circle(5)
     steven.end_fill()
+
 
 if __name__ == "__main__": 
     main() 
