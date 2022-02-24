@@ -42,7 +42,7 @@ def input_guess(expected: int) -> str:
     """Determine if the guess is the correct length."""
     guess: str = input(f"Enter a {expected} character word: ")
     while len(guess) != expected:
-        guess = input(f"That was not {expected} letters! Try again: ")
+        guess = input(f"That was not {expected} characters! Try again: ")
     return guess
 
 
@@ -52,17 +52,17 @@ def main() -> None:
     n: int = 0
     word_entered: str = ""
     won: bool = False
-    while n < len(secret) + 1 and won == False:
+    while n < len(secret) + 1 and won is False:
         print(f"=== Turn {n+1}/6 ===")
         word_entered = input_guess(len(secret))
         print(emojified(word_entered, secret))
         n += 1 
         if word_entered == secret:
             won = True
-    if won == True:
+    if won is True:
         print(f"You won in {n}/6 turns!")
     else:
-        if won == False:
+        if won is False:
             print("X/6 - Sorry, try again tomorrow!")
 
 

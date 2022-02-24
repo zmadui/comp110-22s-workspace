@@ -12,5 +12,5 @@ elif response == 1:
     print("Looking hopeful.")
 elif response == 2:
      print("Ask again later.")
-    else:
+else:
         print("No way. Not a chance.")
