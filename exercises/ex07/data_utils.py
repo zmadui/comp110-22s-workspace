@@ -1,8 +1,9 @@
 """Dictionary related utility functions."""
 
 __author__ = "730329470"
-# Define your functions below
+
 from csv import DictReader
+
 
 def read_csv_rows(filename: str) -> list[dict[str, str]]:
     """Read the rows of a csv into a 'table'."""
@@ -36,7 +37,7 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 
 
 def head(column_table: dict[str, list[str]], N: int) -> dict[str, list[str]]:
-    """Make a dictionary of all the columns in a row"""
+    """Make a dictionary of all the columns in a row."""
     webster: dict[str, list[str]] = {}
     for column in column_table:
         i: int = 0
@@ -52,7 +53,7 @@ def head(column_table: dict[str, list[str]], N: int) -> dict[str, list[str]]:
 
 
 def select(column_table: dict[str, list[str]], column_name: list[str]) -> dict[str, list[str]]:
-    """Create a subset of the columns"""
+    """Create a subset of the columns."""
     result: dict[str, list[str]] = {}
     for column in column_name:
         result[column] = column_table[column]
@@ -60,7 +61,7 @@ def select(column_table: dict[str, list[str]], column_name: list[str]) -> dict[s
 
 
 def concat(table_one: dict[str, list[str]], table_two: dict[str, list[str]]) -> dict[str, list[str]]:
-    """Create a table that combines two tables"""
+    """Create a table that combines two tables."""
     result: dict[str, list[str]] = {}
     for column in table_one:
         result[column] = table_one[column]
@@ -68,12 +69,12 @@ def concat(table_one: dict[str, list[str]], table_two: dict[str, list[str]]) -> 
         if column in result:
             result[column] += table_two[column]
         else:
-            result[column] = table_two[column ]
+            result[column] = table_two[column]
     return result
 
 
-def count( frequency: list[str]) -> dict[str, int]:
-    """Counting how often a value appears"""
+def count(frequency: list[str]) -> dict[str, int]:
+    """Counting how often a value appears."""
     webster: dict[str, int] = {}
     for number in frequency:
         if number in webster:
@@ -81,5 +82,3 @@ def count( frequency: list[str]) -> dict[str, int]:
         else:
             webster[number] = 1
     return webster
-
-
